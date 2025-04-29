@@ -1,0 +1,37 @@
+\documentclass{article}
+
+
+\title{Labwork 1: Gradient Descent}
+\author {Do Thanh Dat - M23.ICT.002}
+
+\begin{document}
+
+\maketitle
+
+\setlength\parindent{0pt}
+
+\section{Introduction}
+
+Gradient descent: \\
+- An iterative algorithm to find minimum value
+
+Usage: \\
+- A method to use in Linear Regression method that provides a linear relationship between an independent variable and a dependent variable
+
+\section{Implementation}
+- function \textbf{gradient\_descent} with 3 input value: (\textbf{starting\_point}, \textbf{learning\_rate}, \textbf{num\_iterations})\\
+- First,calculate derivative of f(x) = $x^2$ is f'(x) = 2x\\
+- Calculate value of x using gradient descent formula: x = x - L * f'(x) with a loop\\
+- Print value of x and f(x)
+- Print minimum point and minimun value
+
+
+\section{Effect of different learning rate L}
+- Apply for function f(x) = $x^2$: \\
+\textbullet\ L = 0.1, x is positive, f(x) is decrease\\
+\textbullet\ L = 1, the program uses 2 value x = 10 and x = -10, f(x) is always 1000\\
+\textbullet\ L = 2, x is positive then negative, f(x) is increase
+
+
+
+\end{document}
