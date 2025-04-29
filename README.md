@@ -1,5 +1,4 @@
-USTH Deep Learning 2025
-==========================
+# USTH Deep Learning 2025
 
-* Your name here
-* YOUR ID HERE IF YOU ARE DAT
+-   Do Thanh Dat
+-   M23.ICT.002
