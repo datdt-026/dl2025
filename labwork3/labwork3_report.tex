@@ -1,0 +1,60 @@
+
+
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Labwork 3 Report}
+\author{Do Thanh Dat - M23.ICT.002}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+This report details the implementation of logistic regression from scratch using gradient descent optimization. The input data is a CSV file containing three columns:\\
+\textbf{Experience}, \textbf{Salary}, and \textbf{Loan}, where \textbf{Loan} is the target variable. The goal is to predict whether a loan is approved (1) or rejected (0) based on the given features.
+
+\section*{Methodology}
+The logistic regression model was implemented as follows:
+\begin{enumerate}
+    \item \textbf{Data Loading}: The CSV file was read, and the features and target variable were extracted.
+    \item \textbf{Data Preparation}: A bias term was added to the features to enable proper weight optimization.
+    \item \textbf{Model Definition}: The sigmoid function was used to compute probabilities.
+    \item \textbf{Loss Function}: Binary cross-entropy loss was computed to evaluate the model's performance.
+    \item \textbf{Gradient Descent}: Weights were updated iteratively using the gradient of the loss function with respect to the weights.
+\end{enumerate}
+
+\section*{Results}
+The training process resulted in the following weights:
+\begin{itemize}
+    \item $w_0$ (bias): {-3.6258}
+    \item $w_1$ (Experience): {2.2566}
+    \item $w_2$ (Salary): {0.1947}
+\end{itemize}
+
+Intermediate loss values during training:
+\begin{itemize}
+    \item Epoch 0: Loss = {0.6931}
+    \item Epoch 100: Loss = {0.4732}
+    \item Epoch 200: Loss = {0.4431}
+    \item Epoch 300: Loss = {0.4218}
+    \item Epoch 400: Loss = {0.4037}
+    \item Epoch 500: Loss = {0.3877}
+    \item Epoch 600: Loss = {0.3736}
+    \item Epoch 700: Loss = {0.3612}
+    \item Epoch 800: Loss = {0.3501}
+    \item Epoch 900: Loss = {0.3402}
+    \item Epoch 999: Loss = {0.3314}
+\end{itemize}
+
+
+\section*{Conclusion}
+The logistic regression model was successfully implemented, and the weights were optimized using gradient descent. This implementation provides a foundation for further exploration of classification problems and demonstrates the mathematical basis of logistic regression.
+
+
+
+\end{document}
