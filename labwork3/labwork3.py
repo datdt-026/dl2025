@@ -39,7 +39,6 @@ def logistic_regression(X, y, lr=0.01, epochs=1000):
 
     return w
 
-# Main
 if __name__ == "__main__":
     file_path = "/Users/dat/Desktop/USTH_Master/deep_learning_25/dl2025/labwork3/loan.csv"
 

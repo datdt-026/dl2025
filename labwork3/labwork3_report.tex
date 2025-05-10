@@ -1,60 +1,47 @@
+\documentclass{article}
 
-
-
-\documentclass[a4paper,12pt]{article}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{hyperref}
-
-\title{Labwork 3 Report}
-\author{Do Thanh Dat - M23.ICT.002}
+\title{Labwork 3: Logistic Regression Report}
+\author {Do Thanh Dat - M23.ICT.002}
+\date{May 7, 2025}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
-\section*{Introduction}
-This report details the implementation of logistic regression from scratch using gradient descent optimization. The input data is a CSV file containing three columns:\\
-\textbf{Experience}, \textbf{Salary}, and \textbf{Loan}, where \textbf{Loan} is the target variable. The goal is to predict whether a loan is approved (1) or rejected (0) based on the given features.
+Logistic regression is a supervised learning algorithm used for binary classification. This report outlines the implementation of logistic regression from scratch and examines how different learning rates affect convergence.\\
 
-\section*{Methodology}
-The logistic regression model was implemented as follows:
-\begin{enumerate}
-    \item \textbf{Data Loading}: The CSV file was read, and the features and target variable were extracted.
-    \item \textbf{Data Preparation}: A bias term was added to the features to enable proper weight optimization.
-    \item \textbf{Model Definition}: The sigmoid function was used to compute probabilities.
-    \item \textbf{Loss Function}: Binary cross-entropy loss was computed to evaluate the model's performance.
-    \item \textbf{Gradient Descent}: Weights were updated iteratively using the gradient of the loss function with respect to the weights.
-\end{enumerate}
+\section{Implementation:}
+- Extract features (X) and target labels (y) from a CSV file. Add a bias term to X.\\
+- Use the sigmoid function: $\sigma(z) = \frac{1}{1 + e^{-z}}$ to map predictions to (0, 1).\\
+- Calculate loss with binary cross-entropy: $\mathcal{L} = -\frac{1}{n}\sum [y \log(\hat{y}) + (1-y)\log(1-\hat{y})]$.\\
+- Update weights using gradient descent: $w = w - \alpha \cdot \nabla \mathcal{L}$.\\
+- Monitor convergence by printing loss every 100 epochs.\\
 
-\section*{Results}
-The training process resulted in the following weights:
-\begin{itemize}
-    \item $w_0$ (bias): {-3.6258}
-    \item $w_1$ (Experience): {2.2566}
-    \item $w_2$ (Salary): {0.1947}
-\end{itemize}
+\section{Effect of Learning Rates:}
+- Learning rate $\alpha = 0.01$: Slow convergence, requires many iterations.
+- Learning rate $\alpha = 0.1$: Balanced, faster convergence without instability.
+- Learning rate $\alpha = 1.0$: Unstable, loss oscillates or diverges.
 
-Intermediate loss values during training:
-\begin{itemize}
-    \item Epoch 0: Loss = {0.6931}
-    \item Epoch 100: Loss = {0.4732}
-    \item Epoch 200: Loss = {0.4431}
-    \item Epoch 300: Loss = {0.4218}
-    \item Epoch 400: Loss = {0.4037}
-    \item Epoch 500: Loss = {0.3877}
-    \item Epoch 600: Loss = {0.3736}
-    \item Epoch 700: Loss = {0.3612}
-    \item Epoch 800: Loss = {0.3501}
-    \item Epoch 900: Loss = {0.3402}
-    \item Epoch 999: Loss = {0.3314}
-\end{itemize}
+\section{Results (\boldmath$\alpha = 0.1$):}
 
+\textbullet\ Epoch 0: Loss = 0.6931471805599453\\
+\textbullet\  Epoch 100: Loss = 0.4731858188748741\\
+\textbullet\ Epoch 200: Loss = 0.4431148892001577\\
+\textbullet\ Epoch 300: Loss = 0.42184504472250584\\
+\textbullet\ Epoch 400: Loss = 0.4036627737208911\\
+\textbullet\ Epoch 500: Loss = 0.38771391410272854\\
+\textbullet\ Epoch 600: Loss = 0.37363766966478135\\
+\textbullet\ Epoch 700: Loss = 0.3611673834506004\\
+\textbullet\ Epoch 800: Loss = 0.35007959564440083\\
+\textbullet\ Epoch 900: Loss = 0.34018408274086553\\
+\textbullet\ Epoch 999: Loss = 0.3314030450317509\\
+\textbullet\ Final weights: \\
+w0 = -3.6257518022586033, \\
+w1 = 2.2566242393052827, \\
+w2 = 0.19465508044497576 \\
 
-\section*{Conclusion}
-The logistic regression model was successfully implemented, and the weights were optimized using gradient descent. This implementation provides a foundation for further exploration of classification problems and demonstrates the mathematical basis of logistic regression.
-
-
+\section{Conclusion:}
+The learning rate significantly impacts performance. A learning rate of $\alpha = 0.1$ achieved optimal results with a final loss of 0.3314 and weights $w_0 = -3.63$, $w_1 = 2.26$, $w_2 = 0.19$.
 
 \end{document}
