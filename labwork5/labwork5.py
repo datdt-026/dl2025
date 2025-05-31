@@ -58,7 +58,6 @@ class NeuralNetwork:
                 ]
 
             layer_deltas.insert(0, delta)
-            # Update weights and biases
             for j, neuron_delta in enumerate(delta):
                 for k, input_val in enumerate(layer.inputs):
                     layer.weights[j][k] += self.learning_rate * neuron_delta * input_val
